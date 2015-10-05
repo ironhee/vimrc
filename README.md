@@ -1,11 +1,11 @@
-[Hong Minhee][]'s Vim settings
+[Ironhee][]'s Vim settings
 ==============================
 
-It contains Vim settings used by Hong Minhee. How to install it is:
+It contains Vim settings used by Ironhee. How to install it is:
 
     ./install.sh
 
-[Hong Minhee]: http://hongminhee.org
+[Ironhee]: https://ironhee.github.io/
 
 
 Required fonts
