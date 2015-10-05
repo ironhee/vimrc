@@ -33,7 +33,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimfiler.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'rhysd/committia.vim'
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -41,7 +40,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 
 Plugin 'mattn/emmet-vim'
-Plugin 'git://github.com/tpope/vim-surround.git'
+Plugin 'tpope/vim-surround'
 Plugin 'matchit.zip'
 Plugin 'taglist.vim'
 Plugin 'fugitive.vim'
@@ -50,8 +49,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'https://github.com/scrooloose/nerdcommenter.git'
-
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'terryma/vim-multiple-cursors'
 
 "End plugin list --------------------------------------------------------------
@@ -174,8 +172,8 @@ set colorcolumn=80
 
 "gVim-specific configurations (including MacVim).
 if has("gui_running")
-  colorscheme solarized
-  set background=dark
+  "colorscheme solarized
+  "set background=dark
   set guioptions=egmrLt
   set linespace=1
 endif
@@ -183,7 +181,7 @@ endif
 "MacVim-specific configurations.
 if has("gui_macvim") || has("gui_vimr")
   set imd
-  set guifont=Source_Code_Pro_Light:h16.00
+  set guifont=Hack:h16.00
 endif
 
 "GVim under GNOME
