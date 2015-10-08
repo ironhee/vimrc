@@ -51,6 +51,7 @@ Plugin 'ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Yggdroot/indentLine'
 
 "End plugin list --------------------------------------------------------------
 call vundle#end()
@@ -245,6 +246,11 @@ let g:user_emmet_expandabbr_key = '<c-e>'
 "Syntastic
 let g:syntastic_javascript_checkers = ['eslint']
 
+"indentLine
+let g:indentLine_enabled = 1
+let g:indentLine_color_term = 239
+
+
 "Keymap -----------------------------------------------------------------------
 let mapleader=","
 nnoremap  :tabn<CR>
@@ -278,7 +284,8 @@ noremap <Right> <NOP>
 
 
 "Commands ---------------------------------------------------------------------
-command ES6 execute "%s/var \\(.*\\) = require(\\('.*'\\));/import \\1 from \\2;/g"
+command ES6Module execute "%s/var \\(.*\\) = require(\\('.*'\\));/import \\1 from \\2;/g"
+command ES6Var execute "%s/var/let/g"
 
 "Abbreviation -----------------------------------------------------------------
 iab cnsl console.log();ODOD
