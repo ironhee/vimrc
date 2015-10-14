@@ -30,6 +30,7 @@ Plugin 'cstrahan/vim-capnp'
 Plugin 'dag/vim2hs'
 
 Plugin 'scrooloose/syntastic'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimfiler.vim'
 Plugin 'scrooloose/nerdtree'
@@ -57,6 +58,9 @@ Plugin 'Yggdroot/indentLine'
 call vundle#end()
 filetype plugin indent on
 
+"Auto reload on change
+set autoread
+
 "Syntax highlighting.
 syntax on
 
@@ -74,12 +78,6 @@ set hlsearch
 set wildmenu
 set showmatch
 set lazyredraw
-
-"Fold
-set foldenable
-set foldlevelstart=10
-set foldnestmax=10
-set foldmethod=indent
 
 "softtab -- use spaces instead tabs.
 set expandtab
@@ -253,11 +251,8 @@ let g:indentLine_color_term = 239
 
 "Keymap -----------------------------------------------------------------------
 let mapleader=","
-nnoremap  :tabn<CR>
 " turn off search highlight
 nnoremap <leader>/ :nohlsearch<CR>
-" space open/closes folds
-nnoremap <space> za
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
@@ -268,7 +263,7 @@ nnoremap <leader>ev :tabe $MYVIMRC<CR>
 nnoremap <leader>eb :tabe ~/.bash_profile<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " save session
-nnoremap <leader>s :mksession<CR>
+nnoremap <leader>s :mksession!<CR>
 " bundle
 nnoremap <leader>bi :BundleInstall<CR>
 " open ag.vim
@@ -288,5 +283,6 @@ command ES6Module execute "%s/var \\(.*\\) = require(\\('.*'\\));/import \\1 fro
 command ES6Var execute "%s/var/let/g"
 
 "Abbreviation -----------------------------------------------------------------
-iab cnsl console.log();ODOD
-iab jsfunc function () {}OD
+iab cnsl console.log();<Left><Left>
+iab rqr require();<Left><Left>
+iab jsfunc function () {}<Left>
